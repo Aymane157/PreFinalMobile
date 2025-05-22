@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "675963267318",
+    "project_id": "pyramidmobile-925fa",
+    "storage_bucket": "pyramidmobile-925fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675963267318:android:9f4fa0efed3215b86064d7",
+        "android_client_info": {
+          "package_name": "com.flutterflow.finwallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuPlXfWlMHWwY56bBieR6UjimlA6GKibM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
