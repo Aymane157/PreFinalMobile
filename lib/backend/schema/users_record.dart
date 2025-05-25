@@ -9,9 +9,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersRecord extends FirestoreRecord {
   UsersRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+      DocumentReference reference,
+      Map<String, dynamic> data,
+      ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -80,6 +80,11 @@ class UsersRecord extends FirestoreRecord {
   bool get locationServices => _locationServices ?? false;
   bool hasLocationServices() => _locationServices != null;
 
+  // "balance" field.
+  double? _balance;
+  double get balance => _balance ?? 0.0;
+  bool hasBalance() => _balance != null;
+
   void _initializeFields() {
     _displayName = snapshotData['display_name'] as String?;
     _email = snapshotData['email'] as String?;
@@ -92,10 +97,11 @@ class UsersRecord extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _userTitle = snapshotData['userTitle'] as String?;
     _receivePushNotifications =
-        snapshotData['receive_push_notifications'] as bool?;
+    snapshotData['receive_push_notifications'] as bool?;
     _receiveEmailNotifications =
-        snapshotData['receive_email_notifications'] as bool?;
+    snapshotData['receive_email_notifications'] as bool?;
     _locationServices = snapshotData['location_services'] as bool?;
+    _balance = castToType<double>(snapshotData['balance']);
   }
 
   static CollectionReference get collection =>
@@ -108,14 +114,14 @@ class UsersRecord extends FirestoreRecord {
       ref.get().then((s) => UsersRecord.fromSnapshot(s));
 
   static UsersRecord fromSnapshot(DocumentSnapshot snapshot) => UsersRecord._(
-        snapshot.reference,
-        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
-      );
+    snapshot.reference,
+    mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+  );
 
   static UsersRecord getDocumentFromData(
-    Map<String, dynamic> data,
-    DocumentReference reference,
-  ) =>
+      Map<String, dynamic> data,
+      DocumentReference reference,
+      ) =>
       UsersRecord._(reference, mapFromFirestore(data));
 
   @override
@@ -128,7 +134,7 @@ class UsersRecord extends FirestoreRecord {
   @override
   bool operator ==(other) =>
       other is UsersRecord &&
-      reference.path.hashCode == other.reference.path.hashCode;
+          reference.path.hashCode == other.reference.path.hashCode;
 }
 
 Map<String, dynamic> createUsersRecordData({
@@ -145,6 +151,7 @@ Map<String, dynamic> createUsersRecordData({
   bool? receivePushNotifications,
   bool? receiveEmailNotifications,
   bool? locationServices,
+  double? balance,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -161,6 +168,7 @@ Map<String, dynamic> createUsersRecordData({
       'receive_push_notifications': receivePushNotifications,
       'receive_email_notifications': receiveEmailNotifications,
       'location_services': locationServices,
+      'balance': balance,
     }.withoutNulls,
   );
 
@@ -184,25 +192,27 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.userTitle == e2?.userTitle &&
         e1?.receivePushNotifications == e2?.receivePushNotifications &&
         e1?.receiveEmailNotifications == e2?.receiveEmailNotifications &&
-        e1?.locationServices == e2?.locationServices;
+        e1?.locationServices == e2?.locationServices &&
+        e1?.balance == e2?.balance;
   }
 
   @override
   int hash(UsersRecord? e) => const ListEquality().hash([
-        e?.displayName,
-        e?.email,
-        e?.password,
-        e?.uid,
-        e?.age,
-        e?.location,
-        e?.phoneNumber,
-        e?.photoUrl,
-        e?.createdTime,
-        e?.userTitle,
-        e?.receivePushNotifications,
-        e?.receiveEmailNotifications,
-        e?.locationServices
-      ]);
+    e?.displayName,
+    e?.email,
+    e?.password,
+    e?.uid,
+    e?.age,
+    e?.location,
+    e?.phoneNumber,
+    e?.photoUrl,
+    e?.createdTime,
+    e?.userTitle,
+    e?.receivePushNotifications,
+    e?.receiveEmailNotifications,
+    e?.locationServices,
+    e?.balance
+  ]);
 
   @override
   bool isValidKey(Object? o) => o is UsersRecord;

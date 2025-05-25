@@ -294,40 +294,61 @@ class _MYCardWidgetState extends State<MYCardWidget>
                               ],
                             ),
                           ),
+                          // In the MYCardWidget build method, replace the hardcoded balance Text widget with a StreamBuilder:
+
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 8.0, 20.0, 0.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'h3086ma4' /* $7,630 */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        font: GoogleFonts.lexend(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontStyle,
+                                StreamBuilder<UsersRecord>(
+                                  stream: UsersRecord.getDocument(currentUserReference!),
+                                  builder: (context, snapshot) {
+                                    if (!snapshot.hasData) {
+                                      return Text(
+                                        '\$0',
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                          font: GoogleFonts.lexend(
+                                            fontWeight: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .fontWeight,
+                                            fontStyle: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context).textColor,
+                                          fontSize: 32.0,
+                                          letterSpacing: 0.0,
                                         ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .textColor,
+                                      );
+                                    }
+                                    final user = snapshot.data!;
+                                    return Text(
+                                      formatNumber(
+                                        user.balance,
+                                        formatType: FormatType.decimal,
+                                        decimalType: DecimalType.automatic,
+                                        currency: '\$',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .override(
+                                        font: GoogleFonts.lexend(
+                                          fontWeight: FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .fontWeight,
+                                          fontStyle: FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .fontStyle,
+                                        ),
+                                        color: FlutterFlowTheme.of(context).textColor,
                                         fontSize: 32.0,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .fontStyle,
                                       ),
+                                    );
+                                  },
                                 ),
                               ],
                             ),
@@ -753,7 +774,7 @@ class _MYCardWidgetState extends State<MYCardWidget>
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  TransferFundsWidget.routeName,
+                                  TransactionADDWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,

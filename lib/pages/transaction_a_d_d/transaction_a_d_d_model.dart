@@ -1,52 +1,42 @@
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
-import 'transaction_a_d_d_widget.dart' show TransactionADDWidget;
+import '/flutter_flow/flutter_flow_model.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/form_field_controller.dart'; // Add this import
 import 'package:flutter/material.dart';
 
-class TransactionADDModel extends FlutterFlowModel<TransactionADDWidget> {
+class TransactionADDModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  String? _textController1Validator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'gzhmf1t6' /* Please enter an amount */,
-      );
-    }
-
-    return null;
-  }
-
-  // State field(s) for SpentAt widget.
+  // State field(s) for amount widget.
+  TextEditingController? amountController;
+  FocusNode? amountFocusNode;
+  // State field(s) for spentAt widget.
+  TextEditingController? spentAtController;
   FocusNode? spentAtFocusNode;
-  TextEditingController? spentAtTextController;
-  String? Function(BuildContext, String?)? spentAtTextControllerValidator;
-  // State field(s) for budget widget.
+  // State field(s) for recipientEmail widget.
+  TextEditingController? recipientEmailController;
+  FocusNode? recipientEmailFocusNode;
+  // State field(s) for DropDown widget.
   String? budgetValue;
   FormFieldController<String>? budgetValueController;
   // State field(s) for reason widget.
+  TextEditingController? reasonController;
   FocusNode? reasonFocusNode;
-  TextEditingController? reasonTextController;
-  String? Function(BuildContext, String?)? reasonTextControllerValidator;
 
-  @override
-  void initState(BuildContext context) {
-    textController1Validator = _textController1Validator;
-  }
+  /// Initialization and disposal methods.
 
-  @override
+  void initState(BuildContext context) {}
+
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController1?.dispose();
-
+    amountController?.dispose();
+    amountFocusNode?.dispose();
+    spentAtController?.dispose();
     spentAtFocusNode?.dispose();
-    spentAtTextController?.dispose();
-
+    recipientEmailController?.dispose();
+    recipientEmailFocusNode?.dispose();
+    reasonController?.dispose();
     reasonFocusNode?.dispose();
-    reasonTextController?.dispose();
   }
+
+/// Additional helper methods are added here.
 }

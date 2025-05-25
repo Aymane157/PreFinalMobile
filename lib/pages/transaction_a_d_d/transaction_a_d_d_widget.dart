@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,8 +18,9 @@ export 'transaction_a_d_d_model.dart';
 class TransactionADDWidget extends StatefulWidget {
   const TransactionADDWidget({super.key});
 
-  static String routeName = 'transaction_ADD';
-  static String routePath = '/transactionADD';
+  // Corrected versions - note the leading slash in routePath
+  static const String routeName = 'transactionADD';
+  static const String routePath = '/transactionADD';  // Added leading slash
 
   @override
   State<TransactionADDWidget> createState() => _TransactionADDWidgetState();
@@ -37,17 +39,20 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
     super.initState();
     _model = createModel(context, () => TransactionADDModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.amountController ??= TextEditingController();
+    _model.amountFocusNode ??= FocusNode();
 
-    _model.spentAtTextController ??= TextEditingController();
+    _model.spentAtController ??= TextEditingController();
     _model.spentAtFocusNode ??= FocusNode();
 
-    _model.reasonTextController ??= TextEditingController();
+    _model.recipientEmailController ??= TextEditingController();
+    _model.recipientEmailFocusNode ??= FocusNode();
+
+    _model.reasonController ??= TextEditingController();
     _model.reasonFocusNode ??= FocusNode();
 
     animationsMap.addAll({
-      'textFieldOnPageLoadAnimation1': AnimationInfo(
+      'amountFieldOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -61,19 +66,19 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
-      'textFieldOnPageLoadAnimation2': AnimationInfo(
+      'spentAtFieldOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -87,19 +92,19 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 170.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
-      'dropDownOnPageLoadAnimation': AnimationInfo(
+      'recipientFieldOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -113,19 +118,19 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
-      'textFieldOnPageLoadAnimation3': AnimationInfo(
+      'budgetDropDownOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -139,31 +144,50 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
             curve: Curves.easeInOut,
             delay: 230.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 120.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 120.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 230.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'reasonFieldOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 260.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 260.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 140.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 260.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(1.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
     });
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
   }
 
   @override
   void dispose() {
     _model.dispose();
-
     super.dispose();
   }
 
@@ -202,8 +226,7 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                   ),
                 ),
                 child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 44.0, 20.0, 20.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 44.0, 20.0, 20.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -212,33 +235,17 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'qywon4k1' /* Add Transaction */,
-                            ),
+                            'Add Transaction',
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  font: GoogleFonts.lexend(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .fontStyle,
-                                ),
+                              fontFamily: 'Lexend',
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            color: FlutterFlowTheme.of(context).primaryBackground,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
                             ),
@@ -248,8 +255,7 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                               buttonSize: 48.0,
                               icon: Icon(
                                 Icons.close_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: FlutterFlowTheme.of(context).secondaryText,
                                 size: 25.0,
                               ),
                               onPressed: () async {
@@ -267,50 +273,27 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                         ),
                         decoration: BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                           child: TextFormField(
-                            controller: _model.textController1,
-                            focusNode: _model.textFieldFocusNode,
+                            controller: _model.amountController,
+                            focusNode: _model.amountFocusNode,
                             obscureText: false,
                             decoration: InputDecoration(
                               labelStyle: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    font: GoogleFonts.lexend(
-                                      fontWeight: FontWeight.w300,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .fontStyle,
-                                    ),
-                                    color:
-                                        FlutterFlowTheme.of(context).grayLight,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontStyle,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'bh9tad8e' /* Amount */,
+                                fontFamily: 'Lexend',
+                                fontWeight: FontWeight.w300,
+                                color: FlutterFlowTheme.of(context).grayLight,
                               ),
+                              hintText: 'Amount',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    font: GoogleFonts.lexend(
-                                      fontWeight: FontWeight.w300,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .fontStyle,
-                                    ),
-                                    color:
-                                        FlutterFlowTheme.of(context).grayLight,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontStyle,
-                                  ),
+                                fontFamily: 'Lexend',
+                                fontWeight: FontWeight.w300,
+                                color: FlutterFlowTheme.of(context).grayLight,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -350,59 +333,32 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  font: GoogleFonts.lexend(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .fontStyle,
-                                ),
+                              fontFamily: 'Lexend',
+                              fontWeight: FontWeight.bold,
+                            ),
                             textAlign: TextAlign.center,
-                            keyboardType: TextInputType.number,
-                            validator: _model.textController1Validator
-                                .asValidator(context),
-                          ).animateOnPageLoad(
-                              animationsMap['textFieldOnPageLoadAnimation1']!),
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                            validator: (val) {
+                              if (val == null || val.isEmpty) {
+                                return 'Please enter an amount';
+                              }
+                              if (double.tryParse(val) == null) {
+                                return 'Please enter a valid number';
+                              }
+                              return null;
+                            },
+                          ),
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: TextFormField(
-                          controller: _model.spentAtTextController,
+                          controller: _model.spentAtController,
                           focusNode: _model.spentAtFocusNode,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'ohewrgsv' /* Spent At */,
-                            ),
-                            labelStyle:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.lexend(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
+                            labelText: 'Spent At',
+                            labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).alternate,
@@ -434,43 +390,79 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 24.0, 24.0, 24.0),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodySmall.override(
-                                    font: GoogleFonts.lexend(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .fontStyle,
-                                  ),
-                          validator: _model.spentAtTextControllerValidator
-                              .asValidator(context),
-                        ).animateOnPageLoad(
-                            animationsMap['textFieldOnPageLoadAnimation2']!),
+                          style: FlutterFlowTheme.of(context).bodySmall,
+                          validator: (val) {
+                            if (val == null || val.isEmpty) {
+                              return 'Please enter where you spent';
+                            }
+                            return null;
+                          },
+                        ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.recipientEmailController,
+                          focusNode: _model.recipientEmailFocusNode,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Recipient Email',
+                            labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).alternate,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 24.0, 24.0),
+                          ),
+                          style: FlutterFlowTheme.of(context).bodySmall,
+                          validator: (val) {
+                            if (val == null || val.isEmpty) {
+                              return 'Please enter recipient email';
+                            }
+                            if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(val)) {
+                              return 'Please enter a valid email';
+                            }
+                            return null;
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: StreamBuilder<List<BudgetListRecord>>(
                           stream: queryBudgetListRecord(
                             queryBuilder: (budgetListRecord) =>
                                 budgetListRecord.where(
-                              'budgetUser',
-                              isEqualTo: currentUserReference,
-                            ),
+                                  'budgetUser',
+                                  isEqualTo: currentUserReference,
+                                ),
                             singleRecord: true,
                           ),
                           builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
@@ -484,46 +476,25 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                               );
                             }
                             List<BudgetListRecord> budgetBudgetListRecordList =
-                                snapshot.data!;
-                            // Return an empty Container when the item does not exist.
+                            snapshot.data!;
                             if (snapshot.data!.isEmpty) {
                               return Container();
                             }
                             final budgetBudgetListRecord =
-                                budgetBudgetListRecordList.isNotEmpty
-                                    ? budgetBudgetListRecordList.first
-                                    : null;
+                            budgetBudgetListRecordList.isNotEmpty
+                                ? budgetBudgetListRecordList.first
+                                : null;
 
                             return FlutterFlowDropDown<String>(
                               controller: _model.budgetValueController ??=
                                   FormFieldController<String>(null),
                               options: budgetBudgetListRecord!.budget,
                               onChanged: (val) =>
-                                  safeSetState(() => _model.budgetValue = val),
+                                  setState(() => _model.budgetValue = val),
                               width: MediaQuery.sizeOf(context).width * 0.9,
                               height: 60.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.lexend(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                '861el4k4' /* Select Budget */,
-                              ),
+                              textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                              hintText: 'Select Budget',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: FlutterFlowTheme.of(context).grayLight,
@@ -532,8 +503,7 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                               fillColor: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).alternate,
+                              borderColor: FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
                               margin: EdgeInsetsDirectional.fromSTEB(
@@ -541,59 +511,20 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                               hidesUnderline: true,
                               isSearchable: false,
                               isMultiSelect: false,
-                            ).animateOnPageLoad(
-                                animationsMap['dropDownOnPageLoadAnimation']!);
+                            );
                           },
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: TextFormField(
-                          controller: _model.reasonTextController,
+                          controller: _model.reasonController,
                           focusNode: _model.reasonFocusNode,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.lexend(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'swxms7ln' /* Reason */,
-                            ),
-                            hintStyle:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.lexend(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
+                            labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                            hintText: 'Reason',
+                            hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).alternate,
@@ -625,30 +556,16 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 40.0, 24.0, 0.0),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.lexend(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(context).bodyMedium,
                           textAlign: TextAlign.start,
                           maxLines: 4,
-                          validator: _model.reasonTextControllerValidator
-                              .asValidator(context),
-                        ).animateOnPageLoad(
-                            animationsMap['textFieldOnPageLoadAnimation3']!),
+                          validator: (val) {
+                            if (val == null || val.isEmpty) {
+                              return 'Please enter a reason';
+                            }
+                            return null;
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -661,10 +578,24 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      StreamBuilder<List<BudgetsRecord>>(
+                  StreamBuilder<UsersRecord>(
+                    stream: UsersRecord.getDocument(currentUserReference!),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 40.0,
+                            height: 40.0,
+                            child: SpinKitPumpingHeart(
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 40.0,
+                            ),
+                          ),
+                        );
+                      }
+                      final currentUser = snapshot.data!;
+
+                      return StreamBuilder<List<BudgetsRecord>>(
                         stream: queryBudgetsRecord(
                           queryBuilder: (budgetsRecord) => budgetsRecord.where(
                             'budetName',
@@ -673,7 +604,6 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                           singleRecord: true,
                         ),
                         builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
@@ -687,42 +617,115 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                             );
                           }
                           List<BudgetsRecord> buttonBudgetsRecordList =
-                              snapshot.data!;
-                          // Return an empty Container when the item does not exist.
+                          snapshot.data!;
                           if (snapshot.data!.isEmpty) {
                             return Container();
                           }
                           final buttonBudgetsRecord =
-                              buttonBudgetsRecordList.isNotEmpty
-                                  ? buttonBudgetsRecordList.first
-                                  : null;
+                          buttonBudgetsRecordList.isNotEmpty
+                              ? buttonBudgetsRecordList.first
+                              : null;
 
                           return FFButtonWidget(
                             onPressed: () async {
-                              await TransactionsRecord.collection.doc().set({
-                                ...createTransactionsRecordData(
-                                  transactionAmount:
-                                      _model.textController1.text,
-                                  transactionName:
-                                      _model.spentAtTextController.text,
-                                  transactionTime: getCurrentTimestamp,
-                                  transactionReason:
-                                      _model.reasonTextController.text,
-                                  user: currentUserReference,
-                                  budgetAssociated:
-                                      buttonBudgetsRecord?.reference,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'categoryName': [_model.budgetValue],
-                                  },
-                                ),
-                              });
-                              context.pop();
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
+
+                              final amount = double.tryParse(
+                                  _model.amountController.text) ??
+                                  0.0;
+
+                              // Check balance
+                              if (amount > currentUser.balance) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Insufficient balance'),
+                                  ),
+                                );
+                                return;
+                              }
+
+                              // Check recipient exists
+                              final recipientQuery = await FirebaseFirestore
+                                  .instance
+                                  .collection('users')
+                                  .where('email',
+                                  isEqualTo:
+                                  _model.recipientEmailController.text)
+                                  .get();
+
+                              if (recipientQuery.docs.isEmpty) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Recipient not found'),
+                                  ),
+                                );
+                                return;
+                              }
+
+                              final recipient = UsersRecord.fromSnapshot(
+                                  recipientQuery.docs.first);
+
+                              try {
+                                // Create transaction
+                                final transactionRef =
+                                TransactionsRecord.collection.doc();
+                                await transactionRef.set({
+                                  'transactionAmount':
+                                  _model.amountController.text,
+                                  'transactionName':
+                                  _model.spentAtController.text,
+                                  'transactionTime': getCurrentTimestamp,
+                                  'transactionReason':
+                                  _model.reasonController.text,
+                                  'user': currentUserReference,
+                                  'userEmail': currentUser.email,
+                                  'userDisplayName':
+                                  currentUser.displayName ?? 'No name',
+                                  'recipient': recipient.reference,
+                                  'recipientEmail':
+                                  _model.recipientEmailController.text,
+                                  'recipientDisplayName':
+                                  recipient.displayName ?? 'No name',
+                                  'budgetAssociated':
+                                  buttonBudgetsRecord?.reference,
+                                  'transactionType': 'transfer',
+                                  'categoryName': [_model.budgetValue],
+                                });
+
+                                // Update balances
+                                await currentUser.reference.update({
+                                  'balance': FieldValue.increment(-amount),
+                                });
+                                await recipient.reference.update({
+                                  'balance': FieldValue.increment(amount),
+                                });
+
+                                // Show success message
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Transaction succeeded!'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+
+                                // Navigate back to myCard page
+                                if (context.mounted) {
+                                  context.pushNamed('transferComplete');
+                                }
+                              } catch (e) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Error: ${e.toString()}'),
+                                    backgroundColor: Colors.red,
+                                  ),
+                                );
+                              }
                             },
-                            text: FFLocalizations.of(context).getText(
-                              'uqfgu088' /* Add Transaction */,
-                            ),
+                            text: 'Add Transaction',
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 70.0,
@@ -734,24 +737,10 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    font: GoogleFonts.lexend(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .fontStyle,
-                                    ),
-                                    color:
-                                        FlutterFlowTheme.of(context).textColor,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontStyle,
-                                  ),
+                                fontFamily: 'Lexend',
+                                fontWeight: FontWeight.bold,
+                                color: FlutterFlowTheme.of(context).textColor,
+                              ),
                               elevation: 0.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -761,30 +750,18 @@ class _TransactionADDWidgetState extends State<TransactionADDWidget>
                             ),
                           );
                         },
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ],
               ),
             ),
             Text(
-              FFLocalizations.of(context).getText(
-                '9stmpsf0' /* Tap above to complete request */,
-              ),
+              'Tap above to complete request',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.lexend(
-                      fontWeight:
-                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                    ),
-                    color: Color(0x43000000),
-                    letterSpacing: 0.0,
-                    fontWeight:
-                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                  ),
+                fontFamily: 'Lexend',
+                color: const Color(0x43000000),
+              ),
             ),
           ],
         ),

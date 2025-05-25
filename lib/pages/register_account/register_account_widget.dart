@@ -116,26 +116,26 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .fontStyle,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -152,26 +152,26 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: GoogleFonts.lexend(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
+                                        font: GoogleFonts.lexend(
+                                          fontWeight:
+                                          FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .fontWeight,
+                                          fontStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -185,59 +185,59 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText:
-                                        FFLocalizations.of(context).getText(
+                                    FFLocalizations.of(context).getText(
                                       'gcwdqm4g' /* Email Address */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                    ),
                                     hintText:
-                                        FFLocalizations.of(context).getText(
+                                    FFLocalizations.of(context).getText(
                                       'iam0xgwx' /* Enter your email... */,
                                     ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                    ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -270,30 +270,30 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 24.0, 20.0, 24.0),
+                                    EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 24.0, 20.0, 24.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.lexend(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                    font: GoogleFonts.lexend(
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   validator: _model
                                       .emailAddressTextControllerValidator
                                       .asValidator(context),
@@ -304,64 +304,64 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
-                                      _model.passwordCreateTextController,
+                                  _model.passwordCreateTextController,
                                   focusNode: _model.passwordCreateFocusNode,
                                   obscureText: !_model.passwordCreateVisibility,
                                   decoration: InputDecoration(
                                     labelText:
-                                        FFLocalizations.of(context).getText(
+                                    FFLocalizations.of(context).getText(
                                       'bqv15dcf' /* Password */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                    ),
                                     hintText:
-                                        FFLocalizations.of(context).getText(
+                                    FFLocalizations.of(context).getText(
                                       'joih97mn' /* Enter your password... */,
                                     ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                    ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -394,12 +394,12 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 24.0, 20.0, 24.0),
+                                    EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 24.0, 20.0, 24.0),
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.passwordCreateVisibility =
-                                            !_model.passwordCreateVisibility,
+                                            () => _model.passwordCreateVisibility =
+                                        !_model.passwordCreateVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
@@ -415,24 +415,24 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.lexend(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                    font: GoogleFonts.lexend(
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   validator: _model
                                       .passwordCreateTextControllerValidator
                                       .asValidator(context),
@@ -443,65 +443,65 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
-                                      _model.passwordConfirmTextController,
+                                  _model.passwordConfirmTextController,
                                   focusNode: _model.passwordConfirmFocusNode,
                                   obscureText:
-                                      !_model.passwordConfirmVisibility,
+                                  !_model.passwordConfirmVisibility,
                                   decoration: InputDecoration(
                                     labelText:
-                                        FFLocalizations.of(context).getText(
+                                    FFLocalizations.of(context).getText(
                                       'rzpiwq9p' /* Confirm Password */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                    ),
                                     hintText:
-                                        FFLocalizations.of(context).getText(
+                                    FFLocalizations.of(context).getText(
                                       'eyfkffka' /* Enter your password... */,
                                     ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                    ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -534,12 +534,12 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 24.0, 20.0, 24.0),
+                                    EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 24.0, 20.0, 24.0),
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.passwordConfirmVisibility =
-                                            !_model.passwordConfirmVisibility,
+                                            () => _model.passwordConfirmVisibility =
+                                        !_model.passwordConfirmVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
@@ -555,24 +555,24 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.lexend(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                    font: GoogleFonts.lexend(
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   validator: _model
                                       .passwordConfirmTextControllerValidator
                                       .asValidator(context),
@@ -585,7 +585,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                   onPressed: () async {
                                     GoRouter.of(context).prepareAuthEvent();
                                     if (_model.passwordCreateTextController
-                                            .text !=
+                                        .text !=
                                         _model.passwordConfirmTextController
                                             .text) {
                                       ScaffoldMessenger.of(context)
@@ -609,11 +609,23 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                       return;
                                     }
 
+                                    // Create user document with balance set to 0
+                                    final usersRecordData =
+                                    createUsersRecordData(
+                                      email: _model
+                                          .emailAddressTextController.text,
+                                      balance: 0.0,
+                                      displayName: '',
+                                    );
+                                    await UsersRecord.collection
+                                        .doc(user.uid)
+                                        .set(usersRecordData);
+
                                     await BudgetListRecord.collection
                                         .doc()
                                         .set(createBudgetListRecordData(
-                                          budgetUser: currentUserReference,
-                                        ));
+                                      budgetUser: currentUserReference,
+                                    ));
 
                                     context.goNamedAuth(
                                         CompleteProfileWidget.routeName,
@@ -633,26 +645,26 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          font: GoogleFonts.lexend(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
+                                      font: GoogleFonts.lexend(
+                                        fontWeight:
+                                        FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                      FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
@@ -668,7 +680,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                 children: [
                                   Container(
                                     width:
-                                        MediaQuery.sizeOf(context).width * 0.8,
+                                    MediaQuery.sizeOf(context).width * 0.8,
                                     height: 44.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
@@ -689,7 +701,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                               transitionType: PageTransitionType
                                                   .leftToRight,
                                               duration:
-                                                  Duration(milliseconds: 220),
+                                              Duration(milliseconds: 220),
                                             ),
                                           },
                                         );
@@ -697,7 +709,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                        MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             Icons.arrow_back_rounded,
@@ -707,44 +719,44 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    4.0, 0.0, 24.0, 0.0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                4.0, 0.0, 24.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 '3twynvfz' /* Login */,
                                               ),
                                               style: FlutterFlowTheme.of(
-                                                      context)
+                                                  context)
                                                   .bodyMedium
                                                   .override(
-                                                    font: GoogleFonts.lexend(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                font: GoogleFonts.lexend(
+                                                  fontWeight:
+                                                  FlutterFlowTheme.of(
+                                                      context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                                  fontStyle:
+                                                  FlutterFlowTheme.of(
+                                                      context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                                ),
+                                                color: FlutterFlowTheme.of(
+                                                    context)
+                                                    .primary,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                FlutterFlowTheme.of(
+                                                    context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                                fontStyle:
+                                                FlutterFlowTheme.of(
+                                                    context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                              ),
                                             ),
                                           ),
                                           Text(
@@ -754,30 +766,30 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.lexend(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                              font: GoogleFonts.lexend(
+                                                fontWeight:
+                                                FlutterFlowTheme.of(
+                                                    context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                                fontStyle:
+                                                FlutterFlowTheme.of(
+                                                    context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                              FlutterFlowTheme.of(
+                                                  context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                              fontStyle:
+                                              FlutterFlowTheme.of(
+                                                  context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -791,21 +803,30 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             GoRouter.of(context).prepareAuthEvent();
                             final user =
-                                await authManager.signInAnonymously(context);
+                            await authManager.signInAnonymously(context);
                             if (user == null) {
                               return;
                             }
 
+                            // Create user document with balance set to 0 for guest users
+                            final usersRecordData = createUsersRecordData(
+                              balance: 0.0,
+                              displayName: 'Guest User',
+                            );
+                            await UsersRecord.collection
+                                .doc(user.uid)
+                                .set(usersRecordData);
+
                             await BudgetListRecord.collection
                                 .doc()
                                 .set(createBudgetListRecordData(
-                                  budgetUser: currentUserReference,
-                                ));
+                              budgetUser: currentUserReference,
+                            ));
 
                             context.goNamedAuth(
                                 MYCardWidget.routeName, context.mounted);
@@ -824,23 +845,23 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: GoogleFonts.lexend(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context).textColor,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                              font: GoogleFonts.lexend(
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
+                              ),
+                              color: FlutterFlowTheme.of(context).textColor,
+                              letterSpacing: 0.0,
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .fontStyle,
+                            ),
                             elevation: 3.0,
                             borderSide: BorderSide(
                               color: Colors.transparent,

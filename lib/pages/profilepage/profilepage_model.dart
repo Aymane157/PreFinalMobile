@@ -8,5 +8,6 @@ class ProfilepageModel extends FlutterFlowModel<ProfilepageWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+  }
 }
