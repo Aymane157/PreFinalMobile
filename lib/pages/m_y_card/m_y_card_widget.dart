@@ -185,23 +185,110 @@ class _MYCardWidgetState extends State<MYCardWidget>
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        title: Text(
-          FFLocalizations.of(context).getText(
-            'xn2so8km' /* My Card */,
-          ),
-          style: FlutterFlowTheme.of(context).displaySmall.override(
-                font: GoogleFonts.lexend(
-                  fontWeight:
-                      FlutterFlowTheme.of(context).displaySmall.fontWeight,
-                  fontStyle:
-                      FlutterFlowTheme.of(context).displaySmall.fontStyle,
+        title: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Text(
+                  FFLocalizations.of(context).getText(
+                    '51kawpgz' /* Welcome, */,
+                  ),
+                  style: FlutterFlowTheme.of(context)
+                      .headlineSmall
+                      .override(
+                    font: GoogleFonts.lexend(
+                      fontWeight: FlutterFlowTheme.of(context)
+                          .headlineSmall
+                          .fontWeight,
+                      fontStyle: FlutterFlowTheme.of(context)
+                          .headlineSmall
+                          .fontStyle,
+                    ),
+                    letterSpacing: 0.0,
+                    fontWeight: FlutterFlowTheme.of(context)
+                        .headlineSmall
+                        .fontWeight,
+                    fontStyle: FlutterFlowTheme.of(context)
+                        .headlineSmall
+                        .fontStyle,
+                  ),
                 ),
-                letterSpacing: 0.0,
-                fontWeight:
-                    FlutterFlowTheme.of(context).displaySmall.fontWeight,
-                fontStyle: FlutterFlowTheme.of(context).displaySmall.fontStyle,
-              ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(
+                      4.0, 0.0, 0.0, 0.0),
+                  child: StreamBuilder<UsersRecord>(
+    stream: UsersRecord.getDocument(currentUserReference!),
+    builder: (context, snapshot) {
+      final user = snapshot.data!;
+      return Text(
+        user.displayName,
+        style: FlutterFlowTheme.of(context)
+            .headlineSmall
+            .override(
+          font: GoogleFonts.lexend(
+            fontWeight:
+            FlutterFlowTheme.of(context)
+                .headlineSmall
+                .fontWeight,
+            fontStyle:
+            FlutterFlowTheme.of(context)
+                .headlineSmall
+                .fontStyle,
+          ),
+          color: FlutterFlowTheme.of(context)
+              .tertiary,
+          letterSpacing: 0.0,
+          fontWeight: FlutterFlowTheme.of(context)
+              .headlineSmall
+              .fontWeight,
+          fontStyle: FlutterFlowTheme.of(context)
+              .headlineSmall
+              .fontStyle,
         ),
+      );
+
+    }
+                  )
+
+
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(
+                  0.0, 4.0, 0.0, 0.0),
+              child: Text(
+                FFLocalizations.of(context).getText(
+                  '30kx6e5v' /* Your latest updates are below. */,
+                ),
+                style: FlutterFlowTheme.of(context)
+                    .bodySmall
+                    .override(
+                  font: GoogleFonts.lexend(
+                    fontWeight: FlutterFlowTheme.of(context)
+                        .bodySmall
+                        .fontWeight,
+                    fontStyle: FlutterFlowTheme.of(context)
+                        .bodySmall
+                        .fontStyle,
+                  ),
+                  letterSpacing: 0.0,
+                  fontWeight: FlutterFlowTheme.of(context)
+                      .bodySmall
+                      .fontWeight,
+                  fontStyle: FlutterFlowTheme.of(context)
+                      .bodySmall
+                      .fontStyle,
+                ),
+              ),
+            ),
+          ],
+        ),
+
         actions: [],
         centerTitle: false,
         elevation: 0.0,
@@ -330,7 +417,7 @@ class _MYCardWidgetState extends State<MYCardWidget>
                                         user.balance,
                                         formatType: FormatType.decimal,
                                         decimalType: DecimalType.automatic,
-                                        currency: '\$',
+                                        currency: 'MAD ',
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
