@@ -1,13 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'profilepage_widget.dart' show ProfilepageWidget;
+import 'm_y_card_widget.dart' show MYCardWidget;
 import 'package:flutter/material.dart';
 
-class ProfilepageModel extends FlutterFlowModel<ProfilepageWidget> {
+class MYCardModel extends FlutterFlowModel<MYCardWidget> {
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-  }
+  void dispose() {}
 }
